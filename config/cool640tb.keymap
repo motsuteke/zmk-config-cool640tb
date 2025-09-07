@@ -22,33 +22,26 @@
         compatible = "zmk,combos";
 
         tab {
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp TAB>;
             key-positions = <0 1>;
             layers = <0>;
         };
 
-        shift_tab {
-            bindings = <&kp TAB>;
-            key-positions = <10 11>;
-            require-prior-idle-ms = <0>;
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <8 9>;
             layers = <0>;
         };
 
-        double_quotation {
-            bindings = <&kp CAPS>;
-            key-positions = <20 21>;
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1 2>;
             layers = <0>;
         };
 
-        eq {
-            bindings = <&bt BT_CLR_ALL>;
-            key-positions = <8 9>;
-            layers = <2>;
-        };
-
-        BS {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <19 18>;
             layers = <0>;
         };
     };
@@ -63,12 +56,12 @@
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+        a_tap_dance: new_behavior {
+            compatible = "zmk,behavior-tap-dance";
+            label = "a_tap_dance";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&mt LEFT_CONTROL LC(A)>;
 
-            #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
     };
@@ -78,37 +71,37 @@
 
         default_layer {
             bindings = <
-&kp Q                    &kp W         &kp E  &kp R        &kp T  &kp Y              &kp U  &kp I          &kp O          &kp P
-&kp A                    &kp S         &kp D  &kp F        &kp G  &kp H              &kp J  &kp K          &kp L          &kp SEMICOLON
-&kp Z                    &kp X         &kp C  &kp V        &kp B  &kp N              &kp M  &kp COMMA      &kp PERIOD     &kp SLASH
-&kp LANG_ZENKAKUHANKAKU  &kp LEFT_GUI  &mo 3  &lt 1 SPACE  &mo 2  &lt 2 RIGHT_SHIFT  &mo 1  &kp LC(RCTRL)  &kp RC(LCTRL)  &kp RG(LANG_HIRAGANA)
+&kp Q                    &kp W         &kp E  &kp R        &kp T  &kp Y              &kp U  &kp I          &kp O              &kp P
+&a_tap_dance             &kp S         &kp D  &kp F        &kp G  &kp H              &kp J  &kp K          &kp L              &kp SEMICOLON
+&kp Z                    &kp X         &kp C  &kp V        &kp B  &kp N              &kp M  &kp COMMA      &kp PERIOD         &kp SLASH
+&kp LANG_ZENKAKUHANKAKU  &kp LEFT_GUI  &mo 3  &lt 1 SPACE  &mo 2  &lt 2 RIGHT_SHIFT  &mo 1  &kp LC(RCTRL)  &kp RC(RIGHT_ALT)  &kp RG(LANG_HIRAGANA)
             >;
         };
 
-        FUNCTION {
+        num_arrow {
             bindings = <
-&none  &none           &kp UP_ARROW  &none      &none  &none          &none      &none      &none  &kp DELETE
-&none  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &none  &kp BACKSPACE  &none      &none      &none  &none
-&none  &none           &none         &none      &none  &mkp LCLK      &mkp RCLK  &mkp MCLK  &none  &none
-&none  &none           &none         &kp ENTER  &none  &none          &none      &none      &none  &none
+&kp DELETE  &none           &kp UP_ARROW  &none      &none  &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH
+&none       &kp LEFT_ARROW  &kp DOWN      &kp RIGHT  &none  &kp BACKSPACE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTRK
+&none       &none           &none         &none      &none  &mkp LCLK      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS
+&none       &none           &none         &kp ENTER  &none  &mkp RCLK      &mkp MCLK     &kp NUMBER_0  &kp PERIOD    &kp PLUS
             >;
         };
 
-        NUM {
+        symbols {
             bindings = <
-&kp F1       &kp F2   &kp F3             &kp F4         &kp F5          &kp F6         &kp F7          &kp F8          &kp F9           &kp F10
-&kp AT_SIGN  &kp SQT  &kp DOUBLE_QUOTES  &kp SEMICOLON  &kp COLON       &kp LEFT       &kp DOWN_ARROW  &kp UP_ARROW    &kp RIGHT        &kp ENTER
-&kp Z        &kp X    &kp C              &kp V          &kp B           &kp LC(SPACE)  &kp RG(SPACE)   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SLASH
-&kp N1       &kp N2   &kp LEFT_CONTROL   &kp LEFT_GUI   &kp UNDERSCORE  &none          &kp LEFT_ALT    &kp BACKSPACE   &kp N3           &mo 4
+&kp EXCLAMATION  &kp DOUBLE_QUOTES  &kp HASH  &kp DOLLAR  &kp PERCENT  &kp AMPERSAND  &kp SQT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE
+&kp AT_SIGN      &none              &none     &none       &none        &none          &none    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp LC(PIPE)
+&none            &none              &none     &none       &none        &none          &none    &none                 &none                  &kp UNDERSCORE
+&none            &none              &none     &none       &none        &none          &none    &none                 &none                  &none
             >;
         };
 
         ARROW {
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2      &kp R         &kp T            &kp Y     &kp U         &kp I      &kp O       &kp P
-&kp A         &mmv MOVE_LEFT  &mmv MOVE_DOWN    &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp H     &kp J         &kp K      &kp L       &kp ENTER
-&kp Z         &kp X           &kp C             &kp V         &kp B            &kp N     &kp M         &kp COMMA  &kp PERIOD  &kp LEFT_SHIFT
-&kp N1        &kp N2          &kp LEFT_CONTROL  &kp LEFT_GUI  &mkp MB1         &mkp MB2  &kp LEFT_ALT  &to 0      &kp N3      &kp N4
+&none    &kp F2   &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8        &kp F9        &kp F10
+&kp F1   &kp F12  &none   &none   &none   &none   &none   &none         &none         &none
+&kp F11  &none    &none   &none   &none   &none   &none   &none         &none         &none
+&none    &none    &none   &none   &none   &none   &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2
             >;
         };
 
