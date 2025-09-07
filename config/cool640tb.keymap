@@ -71,19 +71,19 @@
 
         default_layer {
             bindings = <
-&kp Q                    &kp W         &kp E  &kp R        &kp T  &kp Y              &kp U  &kp I          &kp O              &kp P
-&a_tap_dance             &kp S         &kp D  &kp F        &kp G  &kp H              &kp J  &kp K          &kp L              &kp SEMICOLON
-&kp Z                    &kp X         &kp C  &kp V        &kp B  &kp N              &kp M  &kp COMMA      &kp PERIOD         &kp SLASH
-&kp LANG_ZENKAKUHANKAKU  &kp LEFT_GUI  &mo 3  &lt 1 SPACE  &mo 2  &lt 2 RIGHT_SHIFT  &mo 1  &kp LC(RCTRL)  &kp RC(RIGHT_ALT)  &kp RG(LANG_HIRAGANA)
+&kp Q         &kp W         &kp E  &kp R        &kp T  &kp Y              &kp U  &kp I          &kp O              &kp P
+&a_tap_dance  &kp S         &kp D  &kp F        &kp G  &kp H              &kp J  &kp K          &kp L              &kp SEMICOLON
+&kp Z         &kp X         &kp C  &kp V        &kp B  &kp N              &kp M  &kp COMMA      &kp PERIOD         &kp SLASH
+&kp LANG2     &kp LEFT_GUI  &mo 3  &lt 1 SPACE  &mo 2  &lt 2 RIGHT_SHIFT  &mo 1  &kp LC(RCTRL)  &kp RC(RIGHT_ALT)  &kp RG(LANG_HIRAGANA)
             >;
         };
 
         num_arrow {
             bindings = <
-&kp DELETE  &none           &kp UP_ARROW  &none             &none             &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH
-&none       &kp LEFT_ARROW  &kp DOWN      &kp RIGHT         &none             &kp BACKSPACE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTRK
-&none       &none           &none         &msc MOVE_Y(-10)  &msc MOVE_X(-10)  &mkp LCLK      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS
-&none       &none           &none         &kp ENTER         &none             &mkp RCLK      &mkp MCLK     &kp NUMBER_0  &kp PERIOD    &kp PLUS
+&kp DELETE  &none           &kp UP_ARROW  &none            &none            &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH
+&none       &kp LEFT_ARROW  &kp DOWN      &kp RIGHT        &none            &kp BACKSPACE  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTRK
+&none       &none           &none         &msc MOVE_Y(-5)  &msc MOVE_X(-5)  &mkp MB1       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS
+&none       &none           &none         &kp ENTER        &none            &mkp MB2       &mkp MB3      &kp NUMBER_0  &kp PERIOD    &kp PLUS
             >;
         };
 
