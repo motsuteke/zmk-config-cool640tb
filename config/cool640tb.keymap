@@ -76,10 +76,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W         &kp E             &kp R        &kp T      &kp Y      &kp U  &kp I            &kp O              &kp P
-&a_tap_dance  &kp S         &kp D             &kp F        &kp G      &kp H      &kp J  &kp K            &kp L              &kp SEMICOLON
-&kp Z         &kp X         &kp C             &kp V        &kp B      &kp N      &kp M  &kp COMMA        &kp PERIOD         &kp SLASH
-&kp LANG2     &kp LEFT_GUI  &kp LEFT_CONTROL  &lt 2 SPACE  &mkp LCLK  &mkp RCLK  &mo 1  &kp RIGHT_SHIFT  &kp RC(RIGHT_ALT)  &kp RG(LANG_HIRAGANA)
+&kp Q         &kp W         &kp E      &kp R        &kp T      &kp Y      &kp U  &kp I           &kp O              &kp P
+&a_tap_dance  &kp S         &kp D      &kp F        &kp G      &kp H      &kp J  &kp K           &kp L              &kp SEMICOLON
+&kp Z         &kp X         &kp C      &kp V        &kp B      &kp N      &kp M  &kp COMMA       &kp PERIOD         &kp SLASH
+&kp LANG2     &kp LEFT_GUI  &kp RCTRL  &lt 2 SPACE  &mkp LCLK  &mkp RCLK  &mo 1  &kp LEFT_SHIFT  &kp RC(RIGHT_ALT)  &kp RG(LANG_HIRAGANA)
             >;
         };
 
