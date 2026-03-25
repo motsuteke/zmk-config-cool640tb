@@ -45,9 +45,19 @@
             layers = <0>;
         };
 
-        scroll {
-            bindings = <&msc MOVE_Y(0)>;
-            key-positions = <35 34>;
+        lang2 {
+            bindings = <&kp LANG_HANJA>;
+            key-positions = <16 17>;
+        };
+
+        lang1 {
+            bindings = <&kp LANG1>;
+            key-positions = <13 12>;
+        };
+
+        backsrash {
+            bindings = <&kp BACKSLASH>;
+            key-positions = <28 29>;
         };
     };
 
